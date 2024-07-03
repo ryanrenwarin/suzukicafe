@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suzuki Cafe'</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        @keyframes slideBg {
+            0% {
+                background-image: url('images/b1.png');
+            }
+            33% {
+                background-image: url('images/b2.png');
+            }
+            66% {
+                background-image: url('images/b3.png');
+            }
+            100% {
+                background-image: url('images/b1.png');
+            }
+        }
+
+        .sliding-background {
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            animation: slideBg 10s infinite; /* 10 seconds duration */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="waist">
+                <div class="left-links">
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="Suzuki Cafe'"></a>
+                </div>
+                <div class="right-links">
+                    <ul>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="overlay"></div>
+        <div class="container">
+            <h2>Welcome to Suzuki Cafe'</h2>
+            <p>Temukan kopi, minuman, dan makanan lezat terbaik!</p>
+            <p>Keep Enjoy</p>
+            <a href="#menu" class="btn">View Menu</a>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-items">
+                <!-- List your menu items dynamically here -->
+                <div class="menu-item">
+                    <img src="images/coffee.png" alt="Coffee">
+                    <h3>Coffee</h3>
+                    <p>Nikmati beragam pilihan biji kopi kami dari seluruh dunia.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="images/juices.png" alt="Juices">
+                    <h3>Juices</h3>
+                    <p>Jus segar yang terbuat dari buah-buahan musiman.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="images/snacks.png" alt="Snacks">
+                    <h3>Snacks</h3>
+                    <p>Camilan lezat seperti mie instan, seblak, bakso, dan masih banyak lagi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Suzuki Cafe'</h2>
+            <p>Suzuki Cafe' adalah tempat yang sempurna untuk menikmati secangkir kopi yang nikmat, minuman yang menyegarkan, dan makanan lezat dalam suasana yang nyaman dan ramah. Kami berdedikasi untuk menyajikan produk-produk berkualitas tinggi yang dibuat dari bahan-bahan terbaik, serta memberikan pengalaman yang tak terlupakan bagi setiap pelanggan yang datang.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Hubungi kami melalui WhatsApp untuk pertanyaan atau pemesanan apa pun!</p>
+            <div class="whatsapp-button">
+                <a href="https://wa.me/+6285242054220?text=Hello,%20Suzuki%20Cafe'.%20Saya%20ingin%20memesan." class="btn">Contact via WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Suzuki Cafe'. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

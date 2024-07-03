@@ -1,0 +1,531 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    background-color: #f6f1ed; /* Warna background yang lembut */
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #674a6e; /* Deep purple */
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px; /* Lebar maksimum header */
+    margin: 0 auto; /* Posisi header di tengah */
+    display: flex; /* Susun elemen secara horizontal */
+    justify-content: space-between; /* Susun elemen ke sisi kiri dan kanan */
+    align-items: center; /* Posisikan elemen di tengah vertikal */
+}
+
+.waist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #8e6c8c; /* Garis atas */
+    border-bottom: 2px solid #8e6c8c; /* Garis bawah */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #8e6c8c; /* Warna hover */
+}
+
+.logo {
+    flex: 1; /* Logo mengambil ruang tersisa */
+    text-align: center; /* Posisikan teks (logo) di tengah */
+}
+
+.logo img {
+    max-width: 100px; /* Lebar maksimum gambar logo */
+    height: auto; /* Tinggi gambar menyesuaikan proporsi */
+    border: 2px solid #8e6c8c; /* Warna dan ketebalan border */
+    border-radius: 50%; /* Membuat border berbentuk lingkaran */
+    padding: 5px; /* Padding untuk memberi ruang di sekitar logo */
+}
+
+.left-links, .right-links {
+    padding: 10px 15px; /* Padding untuk memberi ruang di sekitar link */
+    border: 2px solid #8e6c8c; /* Garis tepi dengan warna purple yang sedikit lebih terang */
+    border-radius: 5px; /* Sudut melengkung untuk kotak */
+}
+
+.left-links {
+    order: 1; /* Menempatkan bagian kiri di posisi pertama */
+}
+
+.logo {
+    order: 2; /* Menempatkan logo di posisi kedua (tengah) */
+}
+
+.right-links {
+    order: 3; /* Menempatkan bagian kanan di posisi ketiga */
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Tampilkan elemen header dalam satu kolom di layar kecil */
+        align-items: flex-start; /* Posisikan elemen di kiri pada layar kecil */
+    }
+
+    nav ul {
+        flex-direction: column; /* Tampilkan link dalam satu kolom di layar kecil */
+        align-items: flex-start; /* Posisikan link di kiri pada layar kecil */
+    }
+
+    nav ul li {
+        margin-right: 0; /* Hapus margin di layar kecil */
+        margin-bottom: 10px; /* Tambahkan margin bottom di antara link */
+    }
+
+    .left-links, .right-links {
+        margin-top: 10px; /* Tambahkan ruang di atas dan bawah pada link */
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-family: Comic Sans;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1;
+}
+
+.hero .container {
+    z-index: 2;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: slideBg 15s infinite;
+    z-index: 0;
+}
+
+@keyframes slideBg {
+    0% {
+        background-image: url('images/b1.png');
+    }
+    33% {
+        background-image: url('images/b2.png');
+    }
+    66% {
+        background-image: url('images/b3.png');
+    }
+    100% {
+        background-image: url('images/b1.png');
+    }
+}
+
+.hero .btn {
+    display: inline-block;
+    background-color: #674a6e; /* Deep purple */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #4a3750; /* Warna deep purple lebih gelap untuk hover */
+}
+
+/* Menu Section */
+.menu {
+    background-color: #c9b3bf; /* Taupe */
+    padding: 100px 0;
+    text-align: center;
+}
+
+.menu h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.menu .menu-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu .menu-item {
+    flex: 1 1 300px;
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu .menu-item h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.menu .menu-item p {
+    font-size: 1.1em;
+    font-family: Comic Sans;
+}
+
+.menu-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* About Section */
+.about {
+    background-color: #48516d; /* Indigo */
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-family: Comic Sans;
+}
+
+/* Contact Section */
+.contact {
+    background-color: #e0aaff; /* Blush */
+    color: #333;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-family: Comic Sans;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact .btn {
+    background-color: #674a6e; /* Deep purple */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact .btn:hover {
+    background-color: #4a3750; /* Warna deep purple lebih gelap untuk hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #674a6e; /* Deep purple */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 1.2em;
+}
+
+/* CSS tambahan untuk tombol WhatsApp */
+.whatsapp-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.whatsapp-button .btn {
+    display: inline-block;
+    background-color: #4a3750; /* Warna hijau WhatsApp */
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-button .btn:hover {
+    background-color: #128C7E; /* Warna hijau tua WhatsApp saat hover */
+}
+
+
+
+/* Blog Page */
+.blog {
+    background-color: #c9b3bf; /* Warna background untuk bagian blog */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.blog h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.blog-posts {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.blog-post {
+    width: 30%; /* Lebar masing-masing artikel blog */
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px); /* Efek mengangkat saat hover */
+}
+
+.blog-post img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.blog-post h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.blog-post p.post-meta {
+    color: #888;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.blog-post p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-family: Comic Sans;
+}
+
+.blog-post a.btn {
+    display: inline-block;
+    background-color: #8e6c8c; /* Warna latar belakang tombol */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.blog-post a.btn:hover {
+    background-color: #674a6e; /* Warna latar belakang tombol saat hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .blog-post {
+        width: 45%; /* Lebar masing-masing artikel blog untuk layar medium */
+    }
+}
+
+@media (max-width: 768px) {
+    .blog h2 {
+        font-size: 2em; /* Ukuran font heading lebih kecil untuk layar kecil */
+    }
+
+    .blog-post {
+        width: 100%; /* Lebar masing-masing artikel blog untuk layar kecil */
+    }
+}
+
+/* About Page */
+.about {
+    background-color: #f0f0f0;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #8e6c8c;
+}
+
+.about p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Comic Sans;
+}
+
+/* Menu Page */
+.menu {
+    background-color: #c9b3bf; /* Warna background untuk bagian blog */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.menu h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Contact Page */
+.contact {
+    background-color: #c9b3bf;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact p {
+    color: #333;
+    line-height: 1.6;
+    font-family: Comic Sans;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contact-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.contact-item h3 {
+    color: #8e6c8c;
+    font-size: 1.5em;
+}
+
+.contact-item p {
+    color: #333;
+    line-height: 1.6;
+}
+
+.contact-item iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    border-radius: 10px;
+}
+
